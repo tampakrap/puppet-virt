@@ -14,8 +14,8 @@ Puppet::Type.type(:virt).provide(:openvz) do
     @@vzcache = "/var/lib/vz/template/cache/"
     @@vzconf = "/etc/vz/conf/"
   when "CentOS", "Fedora", "OpenSuSE", "SLES"
-    @@vzcache = "/vz/template/cache/"
-    @@vzconf = "/etc/vz/conf/"
+    @vzcache = "/vz/template/cache/"
+    @vzconf = "/etc/vz/conf/"
   else
     raise Puppet::Error, "Sorry, this provider is not supported for your Operation System, yet :)"
   end
