@@ -88,7 +88,8 @@ Facter.add("virt_uri") do
   confine :virt_conn => true
   setcode do
     begin
-      $c.uri.chomp
+      #$c.uri.chomp
+      'qemu:///system'
     rescue Libvirt::Error, NoMethodError
       nil
     end
